@@ -1,31 +1,23 @@
+/*Name this external file gallery.js*/
 function upDate(previewPic) {
-    let imageDiv = document.getElementById("image");
-
-    // Debugging: Log event triggers
-    console.log("Hover event triggered!");
-
-    // Debugging: Log previewPic properties
-    console.log("Image Source:", previewPic.src);
-    console.log("Image Alt Text:", previewPic.alt);
-
-    // Update background image
-    imageDiv.style.backgroundImage = `url('${previewPic.src}')`;
-    imageDiv.style.backgroundSize = "cover";
-    imageDiv.style.backgroundPosition = "center";
-
-    // Update text to image alt
-    imageDiv.innerHTML = previewPic.alt;
+    /* In this function you should 
+       1) change the url for the background image of the div with the id = "image" 
+       to the source file of the preview image
+       2) Change the text  of the div with the id = "image" 
+       to the alt text of the preview image 
+       */
+    document.getElementById('image').innerHTML = previewPic.alt;
+    document.getElementById('image').style.backgroundImage = "url(" + previewPic.src + ")";
 }
 
 function unDo() {
-    let imageDiv = document.getElementById("image");
-
-    // Debugging: Log reset event
-    console.log("Mouseout event triggered - Resetting image.");
-
-    // Reset background image
-    imageDiv.style.backgroundImage = "none";
-
-    // Reset text
-    imageDiv.innerHTML = "Hover over an image below to display here.";
+    /* In this function you should 
+    1) Update the url for the background image of the div with the id = "image" 
+    back to the orginal-image.  You can use the css code to see what that original URL was
+    
+    2) Change the text  of the div with the id = "image" 
+    back to the original text.  You can use the html code to see what that original text was
+    */
+    document.getElementById('image').style.backgroundImage = "url('')"
+    document.getElementById('image').innerHTML = 'Hover over an image below to display here.';
 }
