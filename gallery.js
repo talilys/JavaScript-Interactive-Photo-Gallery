@@ -1,31 +1,31 @@
-/* Name this external file gallery.js */
-
 function upDate(previewPic) {
-    // Log the event to check if it's triggering
-    console.log("Mouse over detected!");
-    console.log("Image source: " + previewPic.src);
-    console.log("Alt text: " + previewPic.alt);
-
-    // Get the div with id "image"
     let imageDiv = document.getElementById("image");
 
-    // Update the background image to the preview image's src
-    imageDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+    // Debugging: Log event triggers
+    console.log("Hover event triggered!");
 
-    // Update the text to the alt text of the image
+    // Debugging: Log previewPic properties
+    console.log("Image Source:", previewPic.src);
+    console.log("Image Alt Text:", previewPic.alt);
+
+    // Update background image
+    imageDiv.style.backgroundImage = `url('${previewPic.src}')`;
+    imageDiv.style.backgroundSize = "cover";
+    imageDiv.style.backgroundPosition = "center";
+
+    // Update text to image alt
     imageDiv.innerHTML = previewPic.alt;
 }
 
 function unDo() {
-    // Log the event to check if it's triggering
-    console.log("Mouse out detected!");
-
-    // Get the div with id "image"
     let imageDiv = document.getElementById("image");
 
-    // Reset the background image to the original state
-    imageDiv.style.backgroundImage = "url('')";
+    // Debugging: Log reset event
+    console.log("Mouseout event triggered - Resetting image.");
 
-    // Reset the text to the original message
+    // Reset background image
+    imageDiv.style.backgroundImage = "none";
+
+    // Reset text
     imageDiv.innerHTML = "Hover over an image below to display here.";
 }
